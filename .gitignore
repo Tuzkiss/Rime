@@ -1,3 +1,4 @@
+.DS_Store
 installation.yaml
 build/*
 easy_en.userdb/*
