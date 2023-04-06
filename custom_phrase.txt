@@ -22,9 +22,9 @@ MCDN	mcdn
 NCDN	ncdn
 P2P	ppp
 真 P2P	ppp
-B 站	bvj 1
-哔哩哔哩	bvj 2
-bilibili	bvj 3
+B 站	bvj
+哔哩哔哩	bvj
+bilibili	bvj
 哔哩哔哩	bili
 bilibili	bili 
 哔哩哔哩	bilibili 
@@ -36,9 +36,9 @@ m²	pkfhmi
 嗯嗯，好的 👌	enen
 嗯嗯，对的 😎	enen
 可以可以 👌	keyi
-hhhhhhhh...	hhh
-hhhhhhhh...	hhhh
-hhhhhhhh...	hhhhh
+hhhhhhh...	hhh
+hhhhhhh...	hhhh
+hhhhhhh...	hhhhh
 👌	ok
 🥳	gsxi
 😂	joy
@@ -49,11 +49,12 @@ hhhhhhhh...	hhhhh
 ×	iaia
 ×	ig
 ♂	nj
-IPv6	ipv
-IPv4	ipv
 樑总	llzs
-
-
+HEVC/H.265	hevc
+AVC/H.264	avc
+AV1	av
+ChatGPT	chat
+emmm....	emm
 
 馬上到！	msd
 什麼玩意兒!	wtf	2
