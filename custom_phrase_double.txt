@@ -450,7 +450,6 @@ AMOLED	amoled
 AmpliFi	amplifi
 Andale Mono	andale mono
 Animoji	ani moji
-Ansible	an sible
 App Store	app store
 Apple Configurator	apple configurator
 Apple Developer	apple developer
