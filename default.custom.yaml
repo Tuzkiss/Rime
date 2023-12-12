@@ -24,7 +24,7 @@ patch:
       # - F4
       # - Control+grave
       # - Alt+grave
-      - Control+Shift+grave
+      # - Control+Shift+grave
     save_options:  # 开关记忆，从方案选单（而非快捷键）切换时会记住的选项，需要记忆的开关不能设定 reset
       - full_shape
       - ascii_punct

@@ -109,6 +109,7 @@ patch:
       hilited_candidate_text_color: 0xFFFFFF  # 第一候选项文字颜色
       hilited_candidate_label_color: 0xFFFFFF # 第一候选项编号颜色
       hilited_comment_text_color: 0x999999    # 注解文字高亮
+      translucency: true                       # 磨砂
 
     wechat:
       name: '微信键盘 / WeChat-keyboard' # 配色取自微信键盘
@@ -128,6 +129,7 @@ patch:
       inline_preedit: true
       label_font_point: 12
       text_color: 0x424242
+      # translucency: true                       # 磨砂
 
     # 下面是内置的皮肤 /Library/Input Methods/Squirrel.app/Contents/SharedSupport/squirrel.yaml
 

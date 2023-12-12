@@ -4,11 +4,24 @@
 
 功能齐全，词库体验良好，长期更新修订。
 
+<br>
+
+[RIME | 中州韵输入法引擎](https://rime.im/) 是一个跨平台的输入法算法框架，这里是 Rime 的一个配置仓库。
+
+用户需要[下载各平台对应的 Rime 发行版](https://rime.im/download/)，并将此配置应用到配置目录。
+
+详细介绍：[Rime 配置：雾凇拼音](https://dvel.me/posts/rime-ice/)
+
+[常见问题](https://github.com/iDvel/rime-ice/issues/133)
+
+<br>
+
 ## 基本套路
 
 - 简体 | 全拼 | 双拼
 - 主要功能
     -   [melt_eng](https://github.com/tumuyan/rime-melt) 英文输入
+    -   [优化英文输入体验](https://dvel.me/posts/make-rime-en-better/)
     -   [两分输入法](http://cheonhyeong.com/Simplified/download.html) 拼字
     -   简繁切换
     -   日期、时间、星期
@@ -16,22 +29,19 @@
     -   [以词定字](https://github.com/BlindingDark/rime-lua-select-character)
     -   [长词优先](https://github.com/tumuyan/rime-melt/blob/master/lua/melt.lua)
     -   [Unicode](https://github.com/shewer/librime-lua-script/blob/main/lua/component/unicode.lua)
-    -   所有标点符号直接上屏，「/」模式改为「v」模式，「/」直接上屏
+    -   所有标点符号直接上屏，/ 模式改为 v 模式，/ 直接上屏
     -   增加了许多拼音纠错
 - 简体字表、词库
-    -   [《通用规范汉字表》的 8105 字字表](https://github.com/iDvel/The-Table-of-General-Standard-Chinese-Characters)
+    -   [《通用规范汉字表》](https://github.com/iDvel/The-Table-of-General-Standard-Chinese-Characters)
     -   [华宇野风系统词库](http://bbs.pinyin.thunisoft.com/forum.php?mod=viewthread&tid=30049)
     -   [清华大学开源词库](https://github.com/thunlp/THUOCL)
     -   [《现代汉语常用词表》](https://gist.github.com/indiejoseph/eae09c673460aa0b56db)
     -   [《现代汉语词典》](https://forum.freemdict.com/t/topic/12102)
     -   [《同义词词林》](https://forum.freemdict.com/t/topic/1211)
     -   [《新华成语大词典》](https://forum.freemdict.com/t/topic/11407)
-    -   [搜狗网络流行新词](https://pinyin.sogou.com/dict/detail/index/4)
     -   [腾讯词向量](https://ai.tencent.com/ailab/nlp/en/download.html)
 - 词库修订
     - 校对大量异形词、错别字、错误注音
-
-详细介绍：[Rime 配置：雾凇拼音](https://dvel.me/posts/rime-ice/)
 
 <br>
 
@@ -43,7 +53,6 @@
 
 - `8105` 字表。
 - `base` 基础词库。
-- `sogou` 搜狗流行词。
 - `ext` 扩展词库，小词库。
 - `tencent` 扩展词库，大词库。
 - Emoji
@@ -56,66 +65,99 @@
 
 ## 使用说明
 
-备份后删除配置目录下原有的配置文件，再将仓库所有文件复制粘贴进去就好了。
+建议备份原先配置，清空配置目录。
 
-更新词库：词库每个月都会更新几次，更新时只需要将下面 3 个文件夹覆盖过去并重新部署即可。
+### 手动安装
 
-- `cn_dicts` 拼音相关词库
-    - 里面的文件在 `rime_ice.dict.yaml` 中引用
+将仓库所有文件复制粘贴进去就好了。
 
-- `en_dicts` 英文相关词库
-    - 里面的文件在 `melt_eng.dict.yaml` 中引用
+更新词库，手动覆盖 `cn_dicts` `en_dcits` `opencc` 三个文件夹。
 
-- `opencc` Emoji
+### 东风破 [plum](https://github.com/rime/plum)
 
-*更新词库后报错，可能是增删改了词库文件，需要检查 `*.dict.yaml` 与词库文件是否对应上。
+所有配方（`others/recipes/*.recipe.yaml`）只是简单地更新覆盖文件，适合更新词库时使用。后四个配方只是更新词库文件，并不更新 `rime_ice.dict.yaml` 和 `melt_eng.dict.yaml`，因为用户可能会挂载其他词库。如果更新后部署时报错，可能是增、删、改了文件，需要检查上面两个文件和词库的对应关系。
 
-<br>
+安装或更新：全部文件
 
-## 常见问题
+```
+bash rime-install iDvel/rime-ice:others/recipes/full
+```
 
-##### 配置出错
+安装或更新：所有词库文件（包含下面三个）
 
-有时候 Rime 不会报错，而是自动加载默认配置。
+```
+bash rime-install iDvel/rime-ice:others/recipes/all_dicts
+```
 
-如果发现方案选单里是「朙月拼音、仓颉」之类的，那可能是配置有问题，Rime 自动加载了默认配置。
+安装或更新：拼音词库文件
 
-检查一下修改过的地方，比如拼写、缩进是否正确，是否用了 Tab 缩进，或被编辑器自动转为了 Tab ……
+```
+bash rime-install iDvel/rime-ice:others/recipes/cn_dicts
+```
 
-##### 快捷键
+安装或更新：英文词库文件
 
-呼出方案选单默认为 Control+Shift+grave（grave 是 `` ` `` 反引号，Tab 上面那个）。
+```
+bash rime-install iDvel/rime-ice:others/recipes/en_dicts
+```
 
-小狼毫似乎不支持 Control+Shift 开头的快捷键，可在 `default.custom.yaml` 中修改。
+安装或更新：opencc(emoji)
 
-##### Lua 脚本
+```
+bash rime-install iDvel/rime-ice:others/recipes/opencc
+```
 
-Lua 中可配置的选项都提取出来了，不需要修改 Lua 文件。
+### Arch Linux
 
-以词定字的快捷键在 `default.custom.yaml` 中设定，限制码长、长词优先、日期时间这些选项在方案文件中设定。
+#### 安装
 
-##### Shift 切换中英
+使用 AUR helper 安装 [rime-ice-git](https://aur.archlinux.org/packages/rime-ice-git) 包即可。
 
-`default.custom.yaml` 中修改 Shift 对应的选项，将 `noop` 修改为 `commit_code` 、`commit_text` 或 `clear`。
+```bash
+# paru 默认会每次重新评估 pkgver，所以有新的提交时 paru 会自动更新，
+# yay 默认未开启此功能，可以通过此命令开启
+# yay -Y --devel --save
 
-##### 逗号句号翻页
+paru -S rime-ice-git
+# yay -S rime-ice-git
+```
 
-1. 在 `default.custom.yaml` 中解开句号逗号翻页的注释。
-2. 在 `rime_ice.schema.yaml` 中注释掉 `url_2`。（因为这个选项会覆盖掉句号的行为）
+#### 配置
 
-##### 自定义短语
+推荐使用[补丁](https://github.com/rime/home/wiki/Configuration#補靪])的方式启用。
 
-在 `custom_phrase.txt` 中添加，建议清空，换成自己的习惯。
+参考下面的配置示例，修改对应输入法框架用户目录（见下）中的 `default.custom.yaml` 文件
 
-双拼需要额外手动创建 `custom_phrase_double.txt`。
+- iBus 为 `$HOME/.config/ibus/rime/`
+- Fcitx5 为 `$HOME/.local/share/fcitx5/rime/`
+
+<details>
+
+<summary>default.custom.yaml</summary>
+
+```yaml
+patch:
+  # 仅使用「雾凇拼音」的默认配置，配置此行即可
+  __include: rime_ice_suggestion:/
+  # 以下根据自己所需自行定义，仅做参考。
+  # 针对对应处方的定制条目，请使用 <recipe>.custom.yaml 中配置，例如 rime_ice.custom.yaml
+  __patch:
+    key_binder/+:
+      select_first_character: "bracketleft" # 即 [
+      select_last_character: "bracketright" # 即 ]
+```
+
+</details>
 
 <br>
 
 ## 感谢 ❤️
 
-上述用到的词库，及 [@Huandeep](https://github.com/Huandeep) 整理的多个词库。
+感谢上述提到的词库、方案及功能参考。
 
-上述提到的方案及功能参考。
+感谢 [@Huandeep](https://github.com/Huandeep) 整理的多个词库。
+
+感谢所有贡献者。
 
 搜狗转 Rime：[lewangdev/scel2txt](https://github.com/lewangdev/scel2txt)
 

@@ -614,7 +614,6 @@ HomePod	home pod
 HTC Vive	htc
 HTML5	html wu
 Hyper Potion	hyper potion
-iA Writer	ia writer
 iBooks Author	ibooks
 iBooks	ibooks
 iCloud	icloud
@@ -772,7 +771,6 @@ OS X Server	osx
 OS X Server	osx server
 Outlook Express	outlook express
 PaintCode	paint code
-Parallels Desktop	pd
 Perl	perl
 Photo Booth	photo booth
 PhotoDesk	photo desk
