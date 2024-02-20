@@ -9,6 +9,13 @@ patch:
     #   ascii_mode: true    # 开启默认英文
     # com.microsoft.VSCode:
     #   ascii_mode: false   # 关闭默认英文
+    # com.google.Chrome:
+    #   # 規避 https://github.com/rime/squirrel/issues/435
+    #   inline: true
+    # ru.keepcoder.Telegram:
+    #   # 規避 https://github.com/rime/squirrel/issues/475
+    #   inline: true
+
 
 
   # 选择皮肤，亮色与暗色主题
